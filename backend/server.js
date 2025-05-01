@@ -82,7 +82,13 @@ app.post("/predict", upload.single("file"), async (req, res) => {
         });
     }
 });
-
+// Health check route
+app.get("/", (req, res) => {
+    res.status(200).json({ 
+      status: "Server is running",
+      timestamp: new Date().toISOString() 
+    });
+  });
 // Start server
 const PORT = process.env.PORT || 5001; // Use port 5001
 app.listen(PORT, () => {
