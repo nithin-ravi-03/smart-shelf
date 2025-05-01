@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: grocery-classifier-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://23nithinravi2003:Ips4tjTomGoEVqN8@cluster0.goxq0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: PORT
+        value: 5001

@@ -6,6 +6,7 @@ const axios = require("axios");
 const path = require("path");
 const fs = require("fs");
 const FormData = require("form-data"); // Add this
+const uploadRoutes = require("./routes/uploadRoutes"); // Add this
 require("dotenv").config();
 // Connect to MongoDB
 connectDB();
@@ -22,6 +23,9 @@ const storage = multer.diskStorage({
     },
 });
 const upload = multer({ storage });
+
+// Use routes
+app.use("/api", uploadRoutes); // Add this
 
 // Route to handle image upload & send to Flask API
 app.post("/predict", upload.single("file"), async (req, res) => {
