@@ -17,7 +17,10 @@ process.on('unhandledRejection', (reason, promise) => {
 });
 
 const app = express();
-app.use(cors()); // Enable CORS
+app.use(cors({
+    origin: ['https://smart-shelf-4aafge1pm-nithin-ravis-projects.vercel.app/', 'http://localhost:5000'],
+    methods: ['GET', 'POST']
+  }));
 app.use(express.json());
 
 // Multer for handling image uploads
