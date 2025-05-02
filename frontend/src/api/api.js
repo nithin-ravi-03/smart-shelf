@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://smart-shelf-backend-1w1c.onrender.com"; // Updated backend URL
+const API_URL = "https://smart-shelf-backend-1w1c.onrender.com"; // Updated backend URL
 
 // Upload Image & Predict
 export const predictImage = async (formData) => {
